@@ -154,7 +154,8 @@ const FlightInstanceForm = () => {
     arrivalAirportId: "",
     departureDateTime: "",
     arrivalDateTime: "",
-
+    totalSeats: 300,
+    availableSeats: 300,
     status: "SCHEDULED",
   });
 
@@ -184,7 +185,8 @@ const FlightInstanceForm = () => {
             arrivalDateTime: instance.arrivalDateTime
               ? formatDateTimeLocal(new Date(instance.arrivalDateTime))
               : "",
-
+            totalSeats: instance.totalSeats || 300,
+            availableSeats: instance.availableSeats || 300,
             status: instance.status || "SCHEDULED",
           });
         }
@@ -194,10 +196,37 @@ const FlightInstanceForm = () => {
 
   const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
     try {
+      const selectedFlight = getSelectedFlight(values.flightId);
+      const totalSeats =
+        Number(values.totalSeats) ||
+        Number(selectedFlight?.aircraft?.totalSeats) ||
+        Number(selectedFlight?.aircraft?.seatingCapacity) ||
+        300;
+
+      const formatToLocalDateTime = (dateStr) => {
+        if (!dateStr) return "";
+        const d = new Date(dateStr);
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, "0");
+        const day = String(d.getDate()).padStart(2, "0");
+        const hours = String(d.getHours()).padStart(2, "0");
+        const minutes = String(d.getMinutes()).padStart(2, "0");
+        const seconds = String(d.getSeconds()).padStart(2, "0");
+        return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+      };
+
       let formData = {
         ...values,
-        departureDateTime: new Date(values.departureDateTime).toISOString(),
-        arrivalDateTime: new Date(values.arrivalDateTime).toISOString(),
+        flightId: Number(values.flightId),
+        scheduleId: values.scheduleId ? Number(values.scheduleId) : null,
+        departureAirportId: Number(values.departureAirportId),
+        arrivalAirportId: Number(values.arrivalAirportId),
+        departureDateTime: formatToLocalDateTime(values.departureDateTime),
+        arrivalDateTime: formatToLocalDateTime(values.arrivalDateTime),
+        totalSeats: totalSeats,
+        availableSeats: totalSeats,
+        status: values.status || "SCHEDULED",
+        isActive: true,
       };
 
       // In edit mode, only send editable fields
@@ -206,6 +235,8 @@ const FlightInstanceForm = () => {
           departureDateTime: formData.departureDateTime,
           arrivalDateTime: formData.arrivalDateTime,
           status: formData.status,
+          totalSeats: totalSeats,
+          availableSeats: totalSeats,
         };
       }
 
@@ -262,6 +293,14 @@ const FlightInstanceForm = () => {
       setFieldValue("flightId", schedule.flightId || "");
       setFieldValue("departureAirportId", schedule.departureAirportId || "");
       setFieldValue("arrivalAirportId", schedule.arrivalAirportId || "");
+      const flight = getSelectedFlight(schedule.flightId);
+      const seats =
+        flight?.aircraft?.totalSeats ||
+        flight?.aircraft?.seatingCapacity ||
+        schedule.totalSeats ||
+        300;
+      setFieldValue("totalSeats", seats);
+      setFieldValue("availableSeats", seats);
     }
   };
 
@@ -372,9 +411,16 @@ const FlightInstanceForm = () => {
                         <Label htmlFor="flightId">Flight *</Label>
                         <Select
                           value={values.flightId}
-                          onValueChange={(value) =>
-                            setFieldValue("flightId", value)
-                          }
+                          onValueChange={(value) => {
+                            setFieldValue("flightId", value);
+                            const flight = getSelectedFlight(value);
+                            const seats =
+                              flight?.aircraft?.totalSeats ||
+                              flight?.aircraft?.seatingCapacity ||
+                              300;
+                            setFieldValue("totalSeats", seats);
+                            setFieldValue("availableSeats", seats);
+                          }}
                         >
                           <SelectTrigger
                             className={cn(
