@@ -64,7 +64,7 @@ const Header = () => {
                 <Plane className="h-6 w-6 text-primary-foreground" />
               </div>
               <span className="text-xl font-bold text-foreground">
-                ZoshAir
+                Duongdev
               </span>
             </Link>
           </div>
