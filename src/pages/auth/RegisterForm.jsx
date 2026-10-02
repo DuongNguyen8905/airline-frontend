@@ -24,7 +24,7 @@ const validationSchema = Yup.object().shape({
     .matches(/^(?=.*[A-Za-z])(?=.*\d)/, 'Password must contain both letters and numbers'),
   mobile: Yup.string()
     .required('Mobile number is required')
-    .matches(/^\d{10,15}$/, 'Mobile number must be between 10 and 15 digits'),
+    .matches(/^(\+)?\d{9,15}$/, 'Mobile number must be between 9 and 15 digits'),
 });
 
 const Register = () => {
