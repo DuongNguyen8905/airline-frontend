@@ -102,9 +102,9 @@ const FareRulesTable = () => {
 
   const formatCurrency = (value) => {
     if (!value) return "Free";
-    return new Intl.NumberFormat('en-IN', {
+    return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'INR',
+      currency: 'USD',
       minimumFractionDigits: 0,
     }).format(value);
   };

@@ -103,6 +103,9 @@ const BookingHistory = () => {
 
   const getAirlineLogo = (code) => {
     const logos = {
+      "QH": "🎋", // Bamboo Airways
+      "VN": "🌸", // Vietnam Airlines
+      "VJ": "🔴", // Vietjet Air
       "6E": "🔵", // IndiGo
       "AI": "🔴", // Air India
       "SG": "🟡", // SpiceJet

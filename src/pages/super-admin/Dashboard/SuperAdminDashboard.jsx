@@ -69,21 +69,21 @@ const SuperAdminDashboard = () => {
   }, [isSidebarCollapsed]);
 
 
-  // Mock platform statistics
+  // Platform statistics baseline (aligned with live database)
   const platformStats = {
-    totalAirlines: 24,
-    activeAirlines: 21,
-    totalAirports: 156,
-    totalFlights: 1247,
-    activeFlights: 89,
-    totalBookings: 15643,
-    totalUsers: 45678,
-    totalAgents: 234,
-    systemRevenue: 12450000,
-    commissionRevenue: 890000,
-    pendingApprovals: 8,
-    securityAlerts: 3,
-    systemUptime: 99.97,
+    totalAirlines: 3,
+    activeAirlines: 3,
+    totalAirports: 3,
+    totalFlights: 1,
+    activeFlights: 1,
+    totalBookings: 0,
+    totalUsers: 2,
+    totalAgents: 0,
+    systemRevenue: 0,
+    commissionRevenue: 0,
+    pendingApprovals: 0,
+    securityAlerts: 0,
+    systemUptime: 100,
   };
 
   return (

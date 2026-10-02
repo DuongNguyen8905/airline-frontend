@@ -139,7 +139,7 @@ const CancellationAndDateChangePolicy = () => {
                               <p className="text-sm text-gray-700">
                                 Fee:{" "}
                                 <span className="font-bold text-orange-700">
-                                  ₹{fareRule.cancellationFee.toLocaleString()}
+                                  ${fareRule.cancellationFee.toLocaleString()}
                                 </span>{" "}
                                 per passenger
                               </p>
@@ -221,7 +221,7 @@ const CancellationAndDateChangePolicy = () => {
                                 <p className="text-sm text-gray-700">
                                   Fee:{" "}
                                   <span className="font-bold text-orange-700">
-                                    ₹{fareRule.changeFee.toLocaleString()}
+                                    ${fareRule.changeFee.toLocaleString()}
                                   </span>{" "}
                                   per passenger
                                 </p>

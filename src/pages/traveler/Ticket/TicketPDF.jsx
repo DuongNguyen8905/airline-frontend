@@ -315,21 +315,21 @@ const TicketPDFDocument = ({ booking }) => {
             <Text style={s.detailLabel}>FARE</Text>
             <View style={s.detailRow}>
               <Text style={s.detailKey}>Base Fare</Text>
-              <Text style={s.detailVal}>₹{baseFare.toLocaleString()}</Text>
+              <Text style={s.detailVal}>${baseFare.toLocaleString()}</Text>
             </View>
             <View style={s.detailRow}>
               <Text style={s.detailKey}>Taxes</Text>
-              <Text style={s.detailVal}>₹{taxes.toLocaleString()}</Text>
+              <Text style={s.detailVal}>${taxes.toLocaleString()}</Text>
             </View>
             {fees > 0 && (
               <View style={s.detailRow}>
                 <Text style={s.detailKey}>Fees</Text>
-                <Text style={s.detailVal}>₹{fees.toLocaleString()}</Text>
+                <Text style={s.detailVal}>${fees.toLocaleString()}</Text>
               </View>
             )}
             <View style={s.totalRow}>
               <Text style={s.totalKey}>Total</Text>
-              <Text style={s.totalVal}>₹{total.toLocaleString()}</Text>
+              <Text style={s.totalVal}>${total.toLocaleString()}</Text>
             </View>
           </View>
         </View>

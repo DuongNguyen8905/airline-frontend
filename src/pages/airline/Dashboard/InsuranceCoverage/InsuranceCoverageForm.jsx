@@ -52,7 +52,7 @@ const COVERAGE_TYPES = [
   { value: "MEDICAL_EMERGENCY", label: "Medical Emergency", category: "General", description: "Emergency medical coverage during trip" },
 ];
 
-const CURRENCIES = ["INR", "USD", "EUR", "GBP", "AED"];
+const CURRENCIES = ["USD", "VND", "EUR", "GBP", "INR"];
 
 const InsuranceCoverageForm = ({ coverage, onClose }) => {
   const navigate = useNavigate();
@@ -70,7 +70,7 @@ const InsuranceCoverageForm = ({ coverage, onClose }) => {
     name: coverage?.name || "",
     description: coverage?.description || "",
     coverageAmount: coverage?.coverageAmount || "",
-    currency: coverage?.currency || "INR",
+    currency: coverage?.currency || "USD",
     isFlat: coverage?.isFlat ?? true,
     claimCondition: coverage?.claimCondition || "",
     emergencyContact: coverage?.emergencyContact || "",
@@ -142,9 +142,9 @@ const InsuranceCoverageForm = ({ coverage, onClose }) => {
     }
   }, [initialValues.ancillaryId, ancillaries]);
 
-  const formatCurrency = (value, currency = "INR") => {
+  const formatCurrency = (value, currency = "USD") => {
     if (!value) return "";
-    return new Intl.NumberFormat("en-IN", {
+    return new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: currency,
       minimumFractionDigits: 0,
@@ -344,7 +344,7 @@ const InsuranceCoverageForm = ({ coverage, onClose }) => {
                           className="w-full"
                           id="name"
                           name="name"
-                          placeholder="e.g., Personal Accident Coverage ₹50,00,000"
+                          placeholder="e.g., Personal Accident Coverage $50,000"
                           maxLength={200}
                         />
                         <ErrorMessage

@@ -7,7 +7,7 @@ import {
   Plane,
   Clock,
   Star,
-  IndianRupee,
+  DollarSign,
   Timer,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -23,12 +23,12 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const MIN_PRICE = 1000;
-const MAX_PRICE = 200000;
+const MIN_PRICE = 10;
+const MAX_PRICE = 5000;
 const MAX_DURATION = 1440; // 24h in minutes
 
 const formatPrice = (value) =>
-  new Intl.NumberFormat("en-IN", { maximumFractionDigits: 0 }).format(value);
+  new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(value);
 
 const formatDuration = (minutes) => {
   const h = Math.floor(minutes / 60);
@@ -160,16 +160,16 @@ const FiltersSidebar = ({ filters, onFiltersChange, airlines, className }) => {
 
       <CardContent className="p-0">
         {/* ── Price Range ─────────────────────────────── */}
-        <FilterSection title="Price Range" id="price" icon={IndianRupee}>
+        <FilterSection title="Price Range" id="price" icon={DollarSign}>
           <div className="space-y-3 pt-1">
             {/* Current range label */}
             <div className="flex items-center justify-between">
               <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full">
-                ₹{formatPrice(filters.priceRange.min)}
+                ${formatPrice(filters.priceRange.min)}
               </span>
               <span className="text-xs text-muted-foreground">to</span>
               <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full">
-                ₹{formatPrice(filters.priceRange.max)}
+                ${formatPrice(filters.priceRange.max)}
               </span>
             </div>
 
@@ -180,14 +180,14 @@ const FiltersSidebar = ({ filters, onFiltersChange, airlines, className }) => {
               }
               min={MIN_PRICE}
               max={MAX_PRICE}
-              step={500}
+              step={10}
               className="w-full"
             />
 
             <div className="flex gap-2">
               <div className="flex-1">
                 <Label className="text-xs text-muted-foreground mb-1 block">
-                  Min (₹)
+                  Min ($)
                 </Label>
                 <Input
                   type="number"
@@ -208,7 +208,7 @@ const FiltersSidebar = ({ filters, onFiltersChange, airlines, className }) => {
               </div>
               <div className="flex-1">
                 <Label className="text-xs text-muted-foreground mb-1 block">
-                  Max (₹)
+                  Max ($)
                 </Label>
                 <Input
                   type="number"
@@ -230,8 +230,8 @@ const FiltersSidebar = ({ filters, onFiltersChange, airlines, className }) => {
             </div>
 
             <div className="flex justify-between text-xs text-muted-foreground">
-              <span>₹{formatPrice(MIN_PRICE)}</span>
-              <span>₹{formatPrice(MAX_PRICE)}</span>
+              <span>${formatPrice(MIN_PRICE)}</span>
+              <span>${formatPrice(MAX_PRICE)}</span>
             </div>
           </div>
         </FilterSection>

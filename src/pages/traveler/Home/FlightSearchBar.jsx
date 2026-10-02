@@ -58,23 +58,23 @@ const FlightSearchBar = ({ onSearch, className }) => {
     {
       id: "armed_forces",
       label: "Armed Forces",
-      description: "Up to ₹600 off",
+      description: "Up to $25 off",
       icon: Shield,
-      discount: "₹600"
+      discount: "$25"
     },
     {
       id: "senior_citizen",
       label: "Senior Citizen",
-      description: "Up to ₹600 off",
+      description: "Up to $25 off",
       icon: User,
-      discount: "₹600"
+      discount: "$25"
     },
     {
       id: "doctor_nurses",
       label: "Doctor and Nurses",
-      description: "Up to ₹600 off",
+      description: "Up to $25 off",
       icon: Stethoscope,
-      discount: "₹600"
+      discount: "$25"
     }
   ]
 
@@ -83,26 +83,26 @@ const FlightSearchBar = ({ onSearch, className }) => {
     dispatch(listAllAirports())
   }, [dispatch])
 
-  // Set default airports (Ahmedabad to Delhi) after airports are loaded
+  // Set default airports (Hanoi HAN to Ho Chi Minh SGN) after airports are loaded
   React.useEffect(() => {
     if (airports.length > 0 && !defaultsSet) {
-      // Find Ahmedabad airport (AMD)
-      const ahmedabadAirport = airports.find(
-        airport => airport.iataCode === "AMD" ||
-        airport.city?.name?.toLowerCase().includes("ahmedabad")
-      )
+      const departureAirport = airports.find(
+        airport => airport.iataCode === "HAN" ||
+        airport.city?.name?.toLowerCase().includes("hà nội") ||
+        airport.city?.name?.toLowerCase().includes("hanoi")
+      ) || airports[0];
 
-      // Find Delhi airport (DEL)
-      const delhiAirport = airports.find(
-        airport => airport.iataCode === "DEL" ||
-        airport.city?.name?.toLowerCase().includes("delhi")
-      )
+      const arrivalAirport = airports.find(
+        airport => airport.iataCode === "SGN" ||
+        airport.city?.name?.toLowerCase().includes("hồ chí minh") ||
+        airport.city?.name?.toLowerCase().includes("saigon")
+      ) || (airports.length > 1 ? airports[1] : airports[0]);
 
-      if (ahmedabadAirport && delhiAirport) {
+      if (departureAirport && arrivalAirport) {
         setSearchData(prev => ({
           ...prev,
-          departureAirportId: ahmedabadAirport.id,
-          arrivalAirportId: delhiAirport.id
+          departureAirportId: departureAirport.id,
+          arrivalAirportId: arrivalAirport.id
         }))
         setDefaultsSet(true)
       }

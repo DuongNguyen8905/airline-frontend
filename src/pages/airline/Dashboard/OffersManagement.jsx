@@ -57,17 +57,17 @@ const mockOffers = [
     id: "OFF002",
     code: "SAVE20",
     title: "Save More",
-    description: "Flat ₹20 discount on domestic flights",
+    description: "Flat $20 discount on domestic flights",
     type: "fixed",
     value: 20,
     maxDiscount: 20,
-    minBooking: 1000,
+    minBooking: 100,
     validFrom: "2024-02-01",
     validTill: "2024-02-29",
     usageLimit: 5000,
     usedCount: 1823,
     status: "Active",
-    applicableRoutes: ["DEL-BOM", "BLR-DEL", "BOM-BLR"],
+    applicableRoutes: ["HAN-SGN", "HAN-DAD", "SGN-DAD"],
     applicableClasses: ["Economy"],
     userType: "All",
     createdBy: "admin_002",
@@ -80,8 +80,8 @@ const mockOffers = [
     description: "30% off on all flights during festival season",
     type: "percentage",
     value: 30,
-    maxDiscount: 5000,
-    minBooking: 5000,
+    maxDiscount: 50,
+    minBooking: 150,
     validFrom: "2024-03-01",
     validTill: "2024-03-15",
     usageLimit: 500,
@@ -97,11 +97,11 @@ const mockOffers = [
     id: "OFF004",
     code: "BUSINESS100",
     title: "Business Class Deal",
-    description: "₹100 off on business class bookings",
+    description: "$100 off on business class bookings",
     type: "fixed",
     value: 100,
     maxDiscount: 100,
-    minBooking: 8000,
+    minBooking: 300,
     validFrom: "2024-02-10",
     validTill: "2024-04-10",
     usageLimit: 200,
@@ -270,7 +270,7 @@ const OffersManagement = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">Total Savings</p>
-                <p className="text-2xl font-bold text-orange-600">₹{(offersStats.totalSavings / 100000).toFixed(1)}L</p>
+                <p className="text-2xl font-bold text-orange-600">${offersStats.totalSavings.toLocaleString()}</p>
               </div>
               <Gift className="h-8 w-8 text-orange-600" />
             </div>
@@ -417,10 +417,10 @@ const OfferCard = ({ offer, getStatusBadge, getTypeIcon, onEdit, onDelete, onDup
           </div>
           <div className="text-sm">
             <div className="font-medium">
-              {offer.type === "percentage" ? `${offer.value}%` : `₹${offer.value}`}
+              {offer.type === "percentage" ? `${offer.value}%` : `$${offer.value}`}
             </div>
             <div className="text-gray-600">
-              {offer.type === "percentage" && `Max ₹${offer.maxDiscount}`}
+              {offer.type === "percentage" && `Max $${offer.maxDiscount}`}
             </div>
           </div>
         </div>
@@ -461,7 +461,7 @@ const OfferCard = ({ offer, getStatusBadge, getTypeIcon, onEdit, onDelete, onDup
             <span className="text-sm font-medium text-gray-700">Min Booking</span>
           </div>
           <div className="text-sm">
-            <div className="font-medium">₹{offer.minBooking}</div>
+            <div className="font-medium">${offer.minBooking}</div>
             <div className="text-gray-600">{offer.userType} users</div>
           </div>
         </div>
@@ -630,7 +630,7 @@ const OfferForm = ({ offer, offers, onSave, onClose }) => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="percentage">Percentage (%)</SelectItem>
-                  <SelectItem value="fixed">Fixed Amount (₹)</SelectItem>
+                  <SelectItem value="fixed">Fixed Amount ($)</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -648,7 +648,7 @@ const OfferForm = ({ offer, offers, onSave, onClose }) => {
             </div>
             {formData.type === "percentage" && (
               <div>
-                <Label htmlFor="maxDiscount">Max Discount (₹) *</Label>
+                <Label htmlFor="maxDiscount">Max Discount ($) *</Label>
                 <Input
                   id="maxDiscount"
                   type="number"
@@ -661,7 +661,7 @@ const OfferForm = ({ offer, offers, onSave, onClose }) => {
               </div>
             )}
             <div>
-              <Label htmlFor="minBooking">Min Booking (₹) *</Label>
+              <Label htmlFor="minBooking">Min Booking ($) *</Label>
               <Input
                 id="minBooking"
                 type="number"

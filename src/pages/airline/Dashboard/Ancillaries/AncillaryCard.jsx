@@ -40,9 +40,9 @@ const AncillaryCard = ({ ancillary }) => {
   const IconComponent = getAncillaryIcon(ancillary.type, ancillary.subType);
 
   // Format currency
-  const formatCurrency = (value, currency = "INR") => {
+  const formatCurrency = (value, currency = "USD") => {
     if (!value) return "N/A";
-    return new Intl.NumberFormat("en-IN", {
+    return new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: currency,
       minimumFractionDigits: 0,

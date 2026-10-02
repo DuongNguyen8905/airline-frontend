@@ -199,7 +199,7 @@ const SeatSelection = ({ selectedSeats = [], onSelectSeat, passengerCount = 1 })
                 <div className="flex items-center gap-3">
                   {passengerSeat && (
                     <span className="text-base font-bold text-green-600">
-                      ₹{getSeatPrice(passengerSeat)}
+                      ${getSeatPrice(passengerSeat)}
                     </span>
                   )}
                   {passengerSeat ? (
@@ -381,7 +381,7 @@ const SeatSelection = ({ selectedSeats = [], onSelectSeat, passengerCount = 1 })
                                   </span>
                                   {isAvailable && !isSelectedByAnyPassenger && (
                                     <span className="text-[10px] font-bold mt-0.5">
-                                      ₹{getSeatPrice(seat)}
+                                      ${getSeatPrice(seat)}
                                     </span>
                                   )}
                                 </div>
@@ -431,7 +431,7 @@ const SeatSelection = ({ selectedSeats = [], onSelectSeat, passengerCount = 1 })
                                   </span>
                                   {isAvailable && !isSelectedByAnyPassenger && (
                                     <span className="text-[10px] font-bold mt-0.5">
-                                      ₹{getSeatPrice(seat)}
+                                      ${getSeatPrice(seat)}
                                     </span>
                                   )}
                                 </div>

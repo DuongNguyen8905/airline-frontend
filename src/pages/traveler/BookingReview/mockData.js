@@ -1,33 +1,33 @@
 export const mockFlightData = {
   departure: {
-    airport: "Indira Gandhi International Airport",
-    city: "New Delhi",
-    code: "DEL",
-    terminal: "Terminal 3",
+    airport: "Noi Bai International Airport",
+    city: "Hanoi",
+    code: "HAN",
+    terminal: "Terminal 1",
     time: "06:15",
     date: "Mon, 15 Jan"
   },
   arrival: {
-    airport: "Chhatrapati Shivaji Maharaj International Airport",
-    city: "Mumbai",
-    code: "BOM",
-    terminal: "Terminal 2",
-    time: "08:45",
+    airport: "Tan Son Nhat International Airport",
+    city: "Ho Chi Minh City",
+    code: "SGN",
+    terminal: "Terminal 1",
+    time: "08:25",
     date: "Mon, 15 Jan"
   },
   airline: {
-    name: "IndiGo",
-    code: "6E",
-    flightNumber: "6E 2045",
-    logo: "https://images.makemytrip.com/apac/flights/airlines/logos/6E.png"
+    name: "Bamboo Airways",
+    code: "QH",
+    flightNumber: "QH 213",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Bamboo_Airways_logo.svg/1200px-Bamboo_Airways_logo.svg.png"
   },
-  duration: "2h 30m",
+  duration: "2h 10m",
   stops: 0,
-  aircraft: "Airbus A320",
+  aircraft: "Boeing 787-9 Dreamliner",
   cabinClass: "Economy",
   baggage: {
     cabin: "7 Kgs (1 piece only) / Adult",
-    checkIn: "15 Kgs (1 piece only) / Adult"
+    checkIn: "20 Kgs (1 piece only) / Adult"
   },
   passengers: [
     {
@@ -42,13 +42,13 @@ export const mockFlightData = {
 };
 
 export const mockFareData = {
-  baseFare: 3599,
-  taxes: 801,
+  baseFare: 89,
+  taxes: 15,
   seatCharges: 0,
   mealCharges: 0,
   flexibilityAddOn: 0,
   tripSecure: 0,
-  currency: "INR",
+  currency: "USD",
   totalPassengers: 1
 };
 
@@ -62,11 +62,11 @@ export const mockPolicyData = {
       },
       {
         timeframe: "2-24 hours before departure",
-        penalty: "₹3,500 + ₹300 airline fee per passenger"
+        penalty: "$35 + $10 airline fee per passenger"
       },
       {
         timeframe: "24+ hours before departure",
-        penalty: "₹2,500 + ₹300 airline fee per passenger"
+        penalty: "$25 + $10 airline fee per passenger"
       }
     ]
   },
@@ -75,15 +75,15 @@ export const mockPolicyData = {
     rules: [
       {
         timeframe: "0-2 hours before departure",
-        penalty: "₹3,000 + Fare difference"
+        penalty: "$30 + Fare difference"
       },
       {
         timeframe: "2-24 hours before departure",
-        penalty: "₹2,500 + Fare difference"
+        penalty: "$25 + Fare difference"
       },
       {
         timeframe: "24+ hours before departure",
-        penalty: "₹2,000 + Fare difference"
+        penalty: "$20 + Fare difference"
       }
     ]
   }
@@ -180,10 +180,10 @@ export const tripSecureData = {
     {
       id: "basic",
       name: "Basic Coverage",
-      price: 149,
+      price: 15,
       features: [
-        "Medical coverage up to ₹50,000",
-        "Baggage loss up to ₹10,000",
+        "Medical coverage up to $50,000",
+        "Baggage loss up to $1,000",
         "Trip delay compensation",
         "24/7 assistance"
       ]
@@ -191,10 +191,10 @@ export const tripSecureData = {
     {
       id: "premium",
       name: "Premium Coverage",
-      price: 299,
+      price: 30,
       features: [
-        "Medical coverage up to ₹2,00,000",
-        "Baggage loss up to ₹25,000",
+        "Medical coverage up to $200,000",
+        "Baggage loss up to $2,500",
         "Trip cancellation refund (75%)",
         "Flight delay compensation",
         "24/7 priority assistance"

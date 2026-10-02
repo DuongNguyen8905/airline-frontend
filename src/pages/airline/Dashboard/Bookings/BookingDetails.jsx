@@ -43,7 +43,7 @@ const BookingDetails = ({ booking, onClose, getStatusBadge, getPaymentStatusBadg
     })
   }
 
-  const getCurrency = () => booking.currency || booking.ancillaries?.[0]?.currency || 'INR'
+  const getCurrency = () => booking.currency || booking.ancillaries?.[0]?.currency || 'USD'
 
   const toggleAncillary = (id) => {
     setExpandedAncillary(prev => prev === id ? null : id)

@@ -39,9 +39,9 @@ const HomePage = () => {
     },
     {
       icon: <Tag className="h-6 w-6" />,
-      title: "Up to ₹2000 OFF",
+      title: "Up to $30 OFF",
       subtitle: "Use Code on Flight Bookings",
-      code: "SAVE2K",
+      code: "SAVE30",
       color: "from-blue-500 to-cyan-500"
     },
     {
@@ -82,46 +82,46 @@ const HomePage = () => {
 
   const popularDestinations = [
     {
-      city: "Dubai",
-      country: "United Arab Emirates",
-      code: "DXB",
-      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=300&fit=crop",
-      price: "₹12,499"
+      city: "Hà Nội",
+      country: "Vietnam",
+      code: "HAN",
+      image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=300&fit=crop",
+      price: "$89"
     },
     {
-      city: "London",
-      country: "United Kingdom",
-      code: "LHR",
-      image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop",
-      price: "₹45,999"
+      city: "Hồ Chí Minh",
+      country: "Vietnam",
+      code: "SGN",
+      image: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400&h=300&fit=crop",
+      price: "$89"
     },
     {
-      city: "Paris",
-      country: "France",
-      code: "CDG",
-      image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&h=300&fit=crop",
-      price: "₹42,899"
-    },
-    {
-      city: "New York",
-      country: "United States",
-      code: "JFK",
-      image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400&h=300&fit=crop",
-      price: "₹58,999"
-    },
-    {
-      city: "Singapore",
-      country: "Singapore",
-      code: "SIN",
-      image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&h=300&fit=crop",
-      price: "₹18,999"
+      city: "Đà Nẵng",
+      country: "Vietnam",
+      code: "DAD",
+      image: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=400&h=300&fit=crop",
+      price: "$65"
     },
     {
       city: "Tokyo",
       country: "Japan",
       code: "NRT",
       image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&h=300&fit=crop",
-      price: "₹38,499"
+      price: "$350"
+    },
+    {
+      city: "Singapore",
+      country: "Singapore",
+      code: "SIN",
+      image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&h=300&fit=crop",
+      price: "$180"
+    },
+    {
+      city: "Paris",
+      country: "France",
+      code: "CDG",
+      image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&h=300&fit=crop",
+      price: "$450"
     }
   ]
 

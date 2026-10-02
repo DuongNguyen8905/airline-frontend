@@ -181,7 +181,7 @@ const FlightInstanceTable = () => {
   };
 
   const formatDateTime = (dateTime) => {
-    return new Date(dateTime).toLocaleString("en-IN", {
+    return new Date(dateTime).toLocaleString("en-US", {
       day: "2-digit",
       month: "short",
       year: "numeric",
@@ -342,7 +342,7 @@ const FlightInstanceTable = () => {
             <span>Flight Instances ({totalElements})</span>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Calendar className="h-4 w-4" />
-              {new Date().toLocaleDateString("en-IN")}
+              {new Date().toLocaleDateString("en-US")}
             </div>
           </CardTitle>
         </CardHeader>

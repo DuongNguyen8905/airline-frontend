@@ -357,19 +357,19 @@ const TravellerBookingCard = ({ booking, navigate }) => {
               </div>
               <div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">
-                  ₹{booking.totalAmount?.toLocaleString() || '0'}
+                  ${booking.totalAmount?.toLocaleString() || '0'}
                 </div>
                 {getPaymentStatusBadge(booking.paymentStatus)}
                 {booking.fareBaseFare && (
                   <div className="mt-3 pt-3 border-t border-green-200 space-y-1 text-xs">
                     <div className="flex justify-between text-gray-600">
                       <span>Base Fare:</span>
-                      <span className="font-semibold">₹{booking.fareBaseFare}</span>
+                      <span className="font-semibold">${booking.fareBaseFare}</span>
                     </div>
                     {booking.fareTaxesAndFees && (
                       <div className="flex justify-between text-gray-600">
                         <span>Taxes:</span>
-                        <span className="font-semibold">₹{booking.fareTaxesAndFees}</span>
+                        <span className="font-semibold">${booking.fareTaxesAndFees}</span>
                       </div>
                     )}
                   </div>
@@ -591,25 +591,25 @@ const TravellerBookingCard = ({ booking, navigate }) => {
                       {booking.fareBaseFare && (
                         <div className="flex justify-between">
                           <span className="text-gray-600">Base Fare:</span>
-                          <span className="font-semibold text-gray-900">₹{booking.fareBaseFare}</span>
+                          <span className="font-semibold text-gray-900">${booking.fareBaseFare}</span>
                         </div>
                       )}
                       {booking.fareTaxesAndFees && (
                         <div className="flex justify-between">
                           <span className="text-gray-600">Taxes & Fees:</span>
-                          <span className="font-semibold text-gray-900">₹{booking.fareTaxesAndFees}</span>
+                          <span className="font-semibold text-gray-900">${booking.fareTaxesAndFees}</span>
                         </div>
                       )}
                       {booking.fareAirlineFees && (
                         <div className="flex justify-between">
                           <span className="text-gray-600">Airline Fees:</span>
-                          <span className="font-semibold text-gray-900">₹{booking.fareAirlineFees}</span>
+                          <span className="font-semibold text-gray-900">${booking.fareAirlineFees}</span>
                         </div>
                       )}
                       <Separator />
                       <div className="flex justify-between text-base">
                         <span className="font-bold text-gray-900">Total Amount:</span>
-                        <span className="font-bold text-green-600 text-xl">₹{booking.totalAmount?.toLocaleString() || '0'}</span>
+                        <span className="font-bold text-green-600 text-xl">${booking.totalAmount?.toLocaleString() || '0'}</span>
                       </div>
                     </div>
                   </div>

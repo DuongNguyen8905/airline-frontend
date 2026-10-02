@@ -42,64 +42,64 @@ import { getFlightScheduleById } from "@/Redux/flightSchedule/flightScheduleThun
 const mockFlightScheduleDetail = {
   id: 1,
   flightId: 1,
-  flightNumber: "ZA123",
+  flightNumber: "QH213",
   departureAirportId: 1,
   arrivalAirportId: 2,
-  departureTime: "18:00:00",
-  arrivalTime: "23:00:00",
+  departureTime: "08:00:00",
+  arrivalTime: "10:15:00",
   recurrenceType: "WEEKLY",
-  operatingDays: ['TUESDAY', 'THURSDAY', 'WEDNESDAY', 'FRIDAY'],
+  operatingDays: ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY'],
   isActive: true,
-  totalSeats: null,
-  availableSeats: null,
+  totalSeats: 300,
+  availableSeats: 300,
   departureAirport: {
     id: 1,
-    iataCode: 'DEL',
-    name: 'Indira Gandhi International Airport',
-    detailedName: 'Indira Gandhi International Airport - Terminal 2',
-    timeZone: 'Asia/Kolkata',
+    iataCode: 'HAN',
+    name: 'Noi Bai International Airport',
+    detailedName: 'Noi Bai International Airport - Terminal 1',
+    timeZone: 'Asia/Ho_Chi_Minh',
     address: {
-      street: 'Airport Road',
-      postalCode: '110037',
-      cityName: 'New Delhi',
-      countryName: 'India',
+      street: 'Phu Minh, Soc Son',
+      postalCode: '100000',
+      cityName: 'Ha Noi',
+      countryName: 'Vietnam',
       regionCode: 'ASIA'
     },
     city: {
       id: 1,
-      name: 'New Delhi',
-      cityCode: 'DEL',
-      countryCode: 'IN',
-      countryName: 'India'
+      name: 'Ha Noi',
+      cityCode: 'HAN',
+      countryCode: 'VN',
+      countryName: 'Vietnam'
     },
     geoCode: {
-      latitude: 28.5562,
-      longitude: 77.1000
+      latitude: 21.2212,
+      longitude: 105.8072
     }
   },
   arrivalAirport: {
     id: 2,
-    iataCode: 'BOM',
-    name: 'Chhatrapati Shivaji Maharaj International Airport',
-    detailedName: 'Chhatrapati Shivaji Maharaj International Airport - Terminal 2',
-    timeZone: 'Asia/Kolkata',
+    iataCode: 'SGN',
+    name: 'Tan Son Nhat International Airport',
+    detailedName: 'Tan Son Nhat International Airport - Terminal 1',
+    timeZone: 'Asia/Ho_Chi_Minh',
     address: {
-      street: 'Sahar Airport Road',
-      postalCode: '400099',
-      cityName: 'Mumbai',
-      countryName: 'India',
+      street: 'Truong Son, Tan Binh',
+      postalCode: '700000',
+      cityName: 'Ho Chi Minh',
+      countryName: 'Vietnam',
       regionCode: 'ASIA'
     },
     city: {
-      id: 3,
-      name: 'Mumbai',
-      cityCode: 'BOM',
-      countryCode: 'IN',
-      countryName: 'India'
+      id: 2,
+      name: 'Ho Chi Minh',
+      cityCode: 'SGN',
+      countryCode: 'VN',
+      countryName: 'Vietnam'
     },
     geoCode: {
-      latitude: 19.0896,
-      longitude: 72.8656
+      latitude: 10.8188,
+      longitude: 106.6520
     }
   }
 };
@@ -203,7 +203,7 @@ const FlightScheduleDetail = () => {
   };
 
   const formatDateTime = (dateTime) => {
-    return new Date(dateTime).toLocaleString("en-IN", {
+    return new Date(dateTime).toLocaleString("en-US", {
       weekday: "short",
       day: "2-digit",
       month: "short",

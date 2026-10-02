@@ -19,7 +19,7 @@ const FlightInventory = ({ activeSection }) => {
             <div className="flex items-center gap-3">
               <Activity className="h-8 w-8 text-blue-600" />
               <div>
-                <p className="text-2xl font-bold text-blue-600">1,247</p>
+                <p className="text-2xl font-bold text-blue-600">1</p>
                 <p className="text-sm text-blue-800">Total Flights</p>
               </div>
             </div>
@@ -28,17 +28,17 @@ const FlightInventory = ({ activeSection }) => {
             <div className="flex items-center gap-3">
               <Plane className="h-8 w-8 text-green-600" />
               <div>
-                <p className="text-2xl font-bold text-green-600">89</p>
+                <p className="text-2xl font-bold text-green-600">1</p>
                 <p className="text-sm text-green-800">Live Flights</p>
               </div>
             </div>
           </div>
-          <div className="bg-red-50 p-4 rounded-lg">
+          <div className="bg-green-50 p-4 rounded-lg">
             <div className="flex items-center gap-3">
-              <AlertTriangle className="h-8 w-8 text-red-600" />
+              <AlertTriangle className="h-8 w-8 text-green-600" />
               <div>
-                <p className="text-2xl font-bold text-red-600">15</p>
-                <p className="text-sm text-red-800">Issues</p>
+                <p className="text-2xl font-bold text-green-600">0</p>
+                <p className="text-sm text-green-800">Issues</p>
               </div>
             </div>
           </div>
@@ -49,17 +49,10 @@ const FlightInventory = ({ activeSection }) => {
           <div className="space-y-3">
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded">
               <div>
-                <p className="font-medium">AI-203 (DEL → BOM)</p>
-                <p className="text-sm text-gray-600">Departed on time</p>
+                <p className="font-medium">QH213 (HAN → SGN)</p>
+                <p className="text-sm text-gray-600">Bamboo Airways · Boeing 787-9 Dreamliner</p>
               </div>
-              <Badge className="bg-green-100 text-green-800">On Time</Badge>
-            </div>
-            <div className="flex items-center justify-between p-3 bg-gray-50 rounded">
-              <div>
-                <p className="font-medium">6E-425 (BLR → DEL)</p>
-                <p className="text-sm text-gray-600">Delayed by 30 minutes</p>
-              </div>
-              <Badge className="bg-yellow-100 text-yellow-800">Delayed</Badge>
+              <Badge className="bg-green-100 text-green-800">Scheduled</Badge>
             </div>
           </div>
         </div>

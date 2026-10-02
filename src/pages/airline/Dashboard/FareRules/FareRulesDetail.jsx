@@ -35,16 +35,16 @@ const FareRulesDetail = () => {
 
   const formatCurrency = (value) => {
     if (!value) return "Free";
-    return new Intl.NumberFormat('en-IN', {
+    return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'INR',
+      currency: 'USD',
       minimumFractionDigits: 0,
     }).format(value);
   };
 
   const formatDate = (dateString) => {
     if (!dateString) return "Not set";
-    return new Date(dateString).toLocaleDateString('en-IN', {
+    return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',

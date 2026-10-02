@@ -311,7 +311,7 @@ const MealSelection = ({ selectedMeals, onSelectMeal }) => {
                         </span>
                       ) : (
                         <span className="text-base font-bold text-gray-900">
-                          ₹{meal.price || 0}
+                          ${meal.price || 0}
                         </span>
                       )}
                     </div>
@@ -369,7 +369,7 @@ const MealSelection = ({ selectedMeals, onSelectMeal }) => {
               Selected Meals ({selectedMeals.length})
             </p>
             <p className="text-lg font-bold text-green-600">
-              ₹{totalMealCost.toLocaleString()}
+              ${totalMealCost.toLocaleString()}
             </p>
           </div>
           <div className="space-y-2">
@@ -402,7 +402,7 @@ const MealSelection = ({ selectedMeals, onSelectMeal }) => {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="font-bold text-gray-900">
-                    ₹{meal.price || 0}
+                    ${meal.price || 0}
                   </span>
                   <button
                     onClick={(e) => {

@@ -36,33 +36,33 @@ const ETicket = ({ ticketData }) => {
     eTicketNumber: "125-2587413690",
     bookingReference: "SKYBOOK-001",
     airline: {
-      name: "IndiGo",
-      code: "6E",
-      logo: "🔵"
+      name: "Bamboo Airways",
+      code: "QH",
+      logo: "🎋"
     },
     flight: {
-      number: "6E 123",
-      aircraft: "Airbus A320",
+      number: "QH 213",
+      aircraft: "Boeing 787-9 Dreamliner",
       class: "Economy",
-      duration: "2h 35m"
+      duration: "2h 15m"
     },
     departure: {
-      airport: "DEL",
-      airportName: "Indira Gandhi International Airport",
-      city: "New Delhi",
-      terminal: "T3",
-      gate: "A12",
-      date: "2024-02-15",
-      time: "14:30"
+      airport: "HAN",
+      airportName: "Noi Bai International Airport",
+      city: "Ha Noi",
+      terminal: "T1",
+      gate: "05",
+      date: "2026-10-02",
+      time: "08:00"
     },
     arrival: {
-      airport: "BLR",
-      airportName: "Kempegowda International Airport",
-      city: "Bengaluru",
+      airport: "SGN",
+      airportName: "Tan Son Nhat International Airport",
+      city: "Ho Chi Minh City",
       terminal: "T1",
-      gate: "B7",
-      date: "2024-02-15",
-      time: "17:05"
+      gate: "12",
+      date: "2026-10-02",
+      time: "10:15"
     },
     passengers: [
       {
@@ -70,7 +70,7 @@ const ETicket = ({ ticketData }) => {
         name: "John Doe",
         type: "Adult",
         seatNumber: "12A",
-        frequentFlyer: "6E123456789"
+        frequentFlyer: "QH123456789"
       },
       {
         id: 2,
@@ -82,27 +82,27 @@ const ETicket = ({ ticketData }) => {
     ],
     contact: {
       email: "john.doe@email.com",
-      phone: "+91 98765 43210"
+      phone: "+84 98765 43210"
     },
     fare: {
-      baseFare: 6540,
-      taxes: 1240,
-      fees: 760,
-      total: 8540,
-      currency: "INR"
+      baseFare: 89,
+      taxes: 15,
+      fees: 5,
+      total: 109,
+      currency: "USD"
     },
     baggage: {
-      checkin: "15 kg",
+      checkin: "20 kg",
       cabin: "7 kg"
     },
     services: {
-      meal: "Vegetarian Meal",
+      meal: "Standard Meal",
       wheelchair: false,
       extraLegroom: true,
       priorityBoarding: false
     },
-    paymentMethod: "UPI",
-    bookingDate: "2024-01-20T10:30:00Z",
+    paymentMethod: "VNPay",
+    bookingDate: "2026-10-02T10:30:00Z",
     status: "Confirmed"
   }
 
@@ -340,19 +340,19 @@ const ETicket = ({ ticketData }) => {
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span className="text-sm text-gray-600">Base Fare:</span>
-                  <span className="text-sm">₹{ticket.fare.baseFare.toLocaleString()}</span>
+                  <span className="text-sm">${ticket.fare.baseFare.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-sm text-gray-600">Taxes & Fees:</span>
-                  <span className="text-sm">₹{ticket.fare.taxes.toLocaleString()}</span>
+                  <span className="text-sm">${ticket.fare.taxes.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-sm text-gray-600">Other Charges:</span>
-                  <span className="text-sm">₹{ticket.fare.fees.toLocaleString()}</span>
+                  <span className="text-sm">${ticket.fare.fees.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between border-t pt-2">
                   <span className="font-semibold text-gray-900">Total Amount:</span>
-                  <span className="font-bold text-lg text-green-600">₹{ticket.fare.total.toLocaleString()}</span>
+                  <span className="font-bold text-lg text-green-600">${ticket.fare.total.toLocaleString()}</span>
                 </div>
                 <div className="text-sm text-gray-500">
                   Payment Method: {ticket.paymentMethod}

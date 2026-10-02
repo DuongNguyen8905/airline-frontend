@@ -45,8 +45,8 @@ const NotificationsManagement = ({ activeSection }) => {
             </div>
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded">
               <div>
-                <p className="font-medium">Flight Delay Notification</p>
-                <p className="text-sm text-gray-600">AI-203 delay alert to passengers</p>
+                <p className="font-medium">Flight Schedule Notification</p>
+                <p className="text-sm text-gray-600">QH213 schedule update to passengers</p>
               </div>
               <Badge className="bg-green-100 text-green-800">SMS</Badge>
             </div>

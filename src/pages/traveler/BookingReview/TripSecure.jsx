@@ -119,7 +119,7 @@ const TripSecure = ({ selectedTravelProtection, onSelectTravelProtection }) => {
                   </p>
                   <div className="flex items-baseline gap-2">
                     <span className="text-3xl font-bold text-gray-900">
-                      ₹{insurancePrice}
+                      ${insurancePrice}
                     </span>
                     <span className="text-sm text-gray-600">per passenger</span>
                   </div>
@@ -138,7 +138,7 @@ const TripSecure = ({ selectedTravelProtection, onSelectTravelProtection }) => {
                   <ShieldCheck className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900">
-                  What You Get for ₹{insurancePrice}
+                  What You Get for ${insurancePrice}
                 </h3>
               </div>
 
@@ -165,7 +165,7 @@ const TripSecure = ({ selectedTravelProtection, onSelectTravelProtection }) => {
                             </h4>
                             {coverage.coverageAmount > 0 && (
                               <span className="text-xs font-bold text-green-600 bg-green-100 px-2 py-0.5 rounded-full flex-shrink-0">
-                                ₹{coverage.coverageAmount.toLocaleString()}
+                                ${coverage.coverageAmount.toLocaleString()}
                               </span>
                             )}
                           </div>
@@ -192,7 +192,7 @@ const TripSecure = ({ selectedTravelProtection, onSelectTravelProtection }) => {
                       Total Coverage Value
                     </p>
                     <p className="text-lg font-bold text-blue-600">
-                      ₹
+                      $
                       {coverages
                         .reduce((sum, c) => sum + (c.coverageAmount || 0), 0)
                         .toLocaleString()}
@@ -264,7 +264,7 @@ const TripSecure = ({ selectedTravelProtection, onSelectTravelProtection }) => {
                   }`}
                 >
                   <p className="text-xs font-medium">Only</p>
-                  <p className="text-lg font-bold">₹{insurancePrice}</p>
+                  <p className="text-lg font-bold">${insurancePrice}</p>
                 </div>
               )}
             </div>
@@ -381,7 +381,7 @@ const TripSecure = ({ selectedTravelProtection, onSelectTravelProtection }) => {
                                       Coverage
                                     </p>
                                     <span className="text-lg font-bold text-green-600">
-                                      ₹
+                                      $
                                       {coverage.coverageAmount.toLocaleString()}
                                     </span>
                                   </div>

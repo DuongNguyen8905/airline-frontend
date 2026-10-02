@@ -411,7 +411,7 @@ const AncillaryForm = () => {
                       name="metadata.protectionSummary"
                       value={formik.values.metadata.protectionSummary || ""}
                       onChange={formik.handleChange}
-                      placeholder="e.g., Trip cancellation, baggage loss, medical coverage up to ₹5,00,000"
+                      placeholder="e.g., Trip cancellation, baggage loss, medical coverage up to $50,000"
                       rows={3}
                       maxLength={1000}
                     />

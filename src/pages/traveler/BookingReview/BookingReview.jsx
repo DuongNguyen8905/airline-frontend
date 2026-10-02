@@ -373,21 +373,21 @@ const BookingReview = () => {
     console.log("💰 PAYMENT SUMMARY");
     console.log("═══════════════════════════════════════════════════");
     console.log(`Passengers:          ${passengerCount}`);
-    console.log(`Base Fare:           ₹${baseFare.toLocaleString()}`);
-    console.log(`Taxes & Fees:        ₹${taxes.toLocaleString()}`);
-    console.log(`Seat:                ₹${seatCharges.toLocaleString()}`);
+    console.log(`Base Fare:           $${baseFare.toLocaleString()}`);
+    console.log(`Taxes & Fees:        $${taxes.toLocaleString()}`);
+    console.log(`Seat:                $${seatCharges.toLocaleString()}`);
     console.log(
-      `Meals (${selectedMeals}):          ₹${mealCharges.toLocaleString()}  ${mealIds}`,
+      `Meals (${selectedMeals}):          $${mealCharges.toLocaleString()}  ${mealIds}`,
     );
     console.log(
       `Baggage (${selectedBaggage.reduce(
         (sum, b) => sum + b.quantity,
         0,
-      )}):        ₹${baggageCharges.toLocaleString()}`,
+      )}):        $${baggageCharges.toLocaleString()}`,
     );
 
     console.log("───────────────────────────────────────────────────");
-    console.log(`TOTAL:               ₹${grandTotal.toLocaleString()}`);
+    console.log(`TOTAL:               $${grandTotal.toLocaleString()}`);
     console.log("═══════════════════════════════════════════════════");
     console.log(`\n📋 Ancillary IDs: [${ancillaryIds.join(", ")}]`);
     console.log(
@@ -418,7 +418,7 @@ const BookingReview = () => {
       } else if (result.success) {
         // No payment needed, booking confirmed
         toast.success(
-          `Booking confirmed! Total: ₹${grandTotal.toLocaleString()}\nBooking Reference: ${
+          `Booking confirmed! Total: $${grandTotal.toLocaleString()}\nBooking Reference: ${
             result.bookingReference || "N/A"
           }`,
           { id: "booking-toast", duration: 5000 },
@@ -599,7 +599,7 @@ const BookingReview = () => {
               <div>
                 <p className="text-xs text-gray-600">Total Amount</p>
                 <p className="text-lg font-bold text-gray-900">
-                  ₹{1000000000000000000}
+                  ${grandTotal.toLocaleString()}
                 </p>
               </div>
               <button

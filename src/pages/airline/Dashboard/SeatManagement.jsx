@@ -25,39 +25,39 @@ import { cn } from "@/lib/utils"
 const mockSeatMaps = [
   {
     id: "SM001",
-    flightNumber: "AI-203",
-    aircraftType: "Boeing 737-800",
-    totalSeats: 180,
-    layout: "3-3",
+    flightNumber: "QH213",
+    aircraftType: "Boeing 787-9 Dreamliner",
+    totalSeats: 300,
+    layout: "3-3-3",
     classes: {
-      economy: { seats: 156, price: 0 },
-      business: { seats: 24, price: 500 },
+      economy: { seats: 260, price: 0 },
+      business: { seats: 40, price: 150 },
       first: { seats: 0, price: 0 }
     },
     availability: {
-      available: 89,
-      occupied: 67,
-      blocked: 24
+      available: 240,
+      occupied: 45,
+      blocked: 15
     },
-    lastUpdated: "2024-02-10"
+    lastUpdated: "2026-10-02"
   },
   {
     id: "SM002",
-    flightNumber: "6E-425",
-    aircraftType: "Airbus A320",
-    totalSeats: 180,
-    layout: "3-3",
+    flightNumber: "VN213",
+    aircraftType: "Airbus A350-900",
+    totalSeats: 305,
+    layout: "3-3-3",
     classes: {
-      economy: { seats: 180, price: 0 },
-      business: { seats: 0, price: 0 },
+      economy: { seats: 276, price: 0 },
+      business: { seats: 29, price: 180 },
       first: { seats: 0, price: 0 }
     },
     availability: {
-      available: 95,
-      occupied: 74,
-      blocked: 11
+      available: 210,
+      occupied: 80,
+      blocked: 15
     },
-    lastUpdated: "2024-02-12"
+    lastUpdated: "2026-10-02"
   }
 ]
 
@@ -363,7 +363,7 @@ const SeatClassCard = ({ seatClass }) => {
         </div>
         <div className="text-right">
           <div className="text-lg font-bold text-gray-900">
-            {seatClass.extraPrice > 0 ? `+₹${seatClass.extraPrice}` : "Base fare"}
+            {seatClass.extraPrice > 0 ? `+$${seatClass.extraPrice}` : "Base fare"}
           </div>
           <div className="text-sm text-gray-600">Extra charge</div>
         </div>

@@ -224,9 +224,9 @@ const FareManagementForm = ({ fare }) => {
 
   const formatCurrency = (value) => {
     if (!value) return "";
-    return new Intl.NumberFormat("en-IN", {
+    return new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "INR",
+      currency: "USD",
       minimumFractionDigits: 2,
     }).format(value);
   };
@@ -504,7 +504,7 @@ const FareManagementForm = ({ fare }) => {
                           className="flex items-center gap-2"
                         >
                           <DollarSign className="h-4 w-4 text-green-600" />
-                          Base Fare (₹) *
+                          Base Fare ($) *
                         </Label>
                         <Field
                           as={Input}
@@ -533,7 +533,7 @@ const FareManagementForm = ({ fare }) => {
                           className="flex items-center gap-2"
                         >
                           <CreditCard className="h-4 w-4 text-orange-600" />
-                          Taxes & Fees (₹) *
+                          Taxes & Fees ($) *
                         </Label>
                         <Field
                           as={Input}
@@ -562,7 +562,7 @@ const FareManagementForm = ({ fare }) => {
                           className="flex items-center gap-2"
                         >
                           <Plane className="h-4 w-4 text-blue-600" />
-                          Airline Fees (₹) *
+                          Airline Fees ($) *
                         </Label>
                         <Field
                           as={Input}

@@ -282,7 +282,7 @@ const TransactionsManagement = () => {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-900">
-              ₹{(statistics.totalRevenue)}
+              ${(statistics.totalRevenue || 0).toLocaleString()}
             </div>
             <div className="flex items-center gap-1 mt-2 text-xs text-green-700">
               <TrendingUp className="h-3 w-3" />
@@ -528,7 +528,7 @@ const TransactionsManagement = () => {
                     </TableCell>
                     <TableCell>
                       <div className="font-semibold text-gray-900">
-                        ₹{payment.amount}
+                        ${payment.amount}
                       </div>
                     </TableCell>
                     <TableCell>{getGatewayBadge(payment.gateway)}</TableCell>
@@ -660,7 +660,7 @@ const TransactionsManagement = () => {
                   </div>
                   <div>
                     <p className="text-gray-600">Currency</p>
-                    <p className="font-medium text-gray-900">INR</p>
+                    <p className="font-medium text-gray-900">{selectedPayment.currency || "USD"}</p>
                   </div>
                   <div>
                     <p className="text-gray-600">Payment Gateway</p>

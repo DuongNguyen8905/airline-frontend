@@ -32,12 +32,12 @@ import { cn } from "@/lib/utils"
 // Mock data for demonstration
 const mockFlightInstance = {
   id: 1,
-  flightNumber: "AI101",
-  flightName: "Air India Express",
-  departureAirport: "Delhi (DEL)",
-  arrivalAirport: "Mumbai (BOM)",
-  departureDateTime: "2024-01-15T06:30:00Z",
-  arrivalDateTime: "2024-01-15T08:45:00Z",
+  flightNumber: "QH213",
+  flightName: "Bamboo Airways",
+  departureAirport: "Hà Nội (HAN)",
+  arrivalAirport: "Hồ Chí Minh (SGN)",
+  departureDateTime: "2026-10-02T06:30:00Z",
+  arrivalDateTime: "2026-10-02T08:45:00Z",
   status: "Active"
 }
 
@@ -48,7 +48,7 @@ const mockCabin = {
   totalSeats: 24,
   bookedSeats: 18,
   availableSeats: 6,
-  currentPrice: 14000.00
+  currentPrice: 189.00
 }
 
 const mockSeats = Array.from({ length: 24 }, (_, i) => ({
@@ -60,7 +60,7 @@ const mockSeats = Array.from({ length: 24 }, (_, i) => ({
   passengerName: Math.random() > 0.7 ? `Passenger ${i + 1}` : null,
   bookingReference: Math.random() > 0.7 ? `PNR${Math.random().toString(36).substr(2, 6).toUpperCase()}` : null,
   mealPreference: Math.random() > 0.5 ? "VEGETARIAN" : Math.random() > 0.5 ? "NON_VEGETARIAN" : null,
-  fare: 14000.00,
+  fare: 189.00,
   seatCharacteristics: Math.random() > 0.5 ? ["EXTRA_LEGROOM"] : ["PRIORITY_BOARDING"],
   isAvailable: Math.random() < 0.3,
   isOccupied: Math.random() > 0.7
@@ -130,14 +130,14 @@ const CabinSeatManagementPage = () => {
   }
 
   const formatCurrency = (amount) => {
-    return new Intl.NumberFormat('en-IN', {
+    return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'INR'
+      currency: 'USD'
     }).format(amount)
   }
 
   const formatDateTime = (dateTime) => {
-    return new Date(dateTime).toLocaleString('en-IN', {
+    return new Date(dateTime).toLocaleString('en-US', {
       day: '2-digit',
       month: 'short',
       hour: '2-digit',

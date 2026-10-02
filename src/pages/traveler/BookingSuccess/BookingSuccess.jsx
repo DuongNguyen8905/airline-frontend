@@ -506,7 +506,7 @@ const BookingSuccess = () => {
                               {!isComplimentary && mealItem.price > 0 && (
                                 <div className="text-right ml-2">
                                   <div className="text-lg font-bold text-green-700">
-                                    ₹{mealItem.price?.toLocaleString()}
+                                    ${mealItem.price?.toLocaleString()}
                                   </div>
                                 </div>
                               )}
@@ -627,7 +627,7 @@ const BookingSuccess = () => {
                       <div className="text-right">
                         <div className="text-sm text-gray-600">Meal Charges</div>
                         <div className="text-xl font-bold text-green-700">
-                          ₹{booking.meals
+                          ${booking.meals
                             .filter(m => !m.complimentary && m.price > 0)
                             .reduce((sum, m) => sum + (m.price || 0), 0)
                             .toLocaleString()}
@@ -702,7 +702,7 @@ const BookingSuccess = () => {
                             </div>
                             <div className="text-right ml-4">
                               <div className="text-2xl font-bold text-orange-600">
-                                ₹{item.price?.toLocaleString()}
+                                ${item.price?.toLocaleString()}
                               </div>
                               {item.available !== undefined && (
                                 <Badge className={item.available ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}>
@@ -736,7 +736,7 @@ const BookingSuccess = () => {
                                           </div>
                                           {coverage.coverageAmount > 0 && (
                                             <div className="text-xs text-blue-700 font-medium mt-1">
-                                              Coverage: {coverage.currency || "₹"} {coverage.coverageAmount.toLocaleString()}
+                                              Coverage: {coverage.currency || "$"} {coverage.coverageAmount.toLocaleString()}
                                               {coverage.isFlat && " (Flat)"}
                                             </div>
                                           )}
@@ -864,13 +864,13 @@ const BookingSuccess = () => {
                       <div className="p-3 bg-teal-50 rounded-lg">
                         <div className="text-sm text-gray-600 mb-1">Base Fare</div>
                         <div className="text-lg font-bold text-teal-700">
-                          ₹{booking.fare.baseFare?.toLocaleString() || '0'}
+                          ${booking.fare.baseFare?.toLocaleString() || '0'}
                         </div>
                       </div>
                       <div className="p-3 bg-teal-50 rounded-lg">
                         <div className="text-sm text-gray-600 mb-1">Current Price</div>
                         <div className="text-lg font-bold text-teal-700">
-                          ₹{booking.fare.currentPrice?.toLocaleString() || '0'}
+                          ${booking.fare.currentPrice?.toLocaleString() || '0'}
                         </div>
                       </div>
                       <div className="p-3 bg-teal-50 rounded-lg">
@@ -968,7 +968,7 @@ const BookingSuccess = () => {
                         {booking.fare.airlineFees > 0 && (
                           <div className="flex items-center gap-2 p-2 bg-gray-50 rounded">
                             <Info className="h-4 w-4 text-blue-600" />
-                            <span className="text-sm">Airline Fees: ₹{booking.fare.airlineFees}</span>
+                            <span className="text-sm">Airline Fees: ${booking.fare.airlineFees}</span>
                           </div>
                         )}
                       </div>
@@ -1141,7 +1141,7 @@ const BookingSuccess = () => {
                               <div className="flex justify-between">
                                 <span className="text-gray-600">Cancellation Fee:</span>
                                 <span className="font-semibold text-gray-900">
-                                  ₹{booking.fare.fareRules.cancellationFee?.toLocaleString()}
+                                  ${booking.fare.fareRules.cancellationFee?.toLocaleString()}
                                 </span>
                               </div>
                             )}
@@ -1177,7 +1177,7 @@ const BookingSuccess = () => {
                             <div className="flex justify-between">
                               <span className="text-gray-600">Change Fee:</span>
                               <span className="font-semibold text-gray-900">
-                                ₹{booking.fare.fareRules.changeFee?.toLocaleString()}
+                                ${booking.fare.fareRules.changeFee?.toLocaleString()}
                               </span>
                             </div>
                           )}
@@ -1271,14 +1271,14 @@ const BookingSuccess = () => {
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-600">Base Fare</span>
                     <span className="font-medium">
-                      {booking.currency || "₹"}{" "}
+                      {booking.currency || "$"}{" "}
                       {booking.fare?.baseFare?.toFixed(2) || "0.00"}
                     </span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-600">Taxes & Fees</span>
                     <span className="font-medium">
-                      {booking.currency || "₹"}{" "}
+                      {booking.currency || "$"}{" "}
                       {((booking.totalAmount || 0) - (booking.fare?.baseFare || 0) - (booking.fare?.airlineFees || 0))?.toFixed(2) || "0.00"}
                     </span>
                   </div>
@@ -1286,7 +1286,7 @@ const BookingSuccess = () => {
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-gray-600">Airline Fees</span>
                       <span className="font-medium">
-                        {booking.currency || "₹"}{" "}
+                        {booking.currency || "$"}{" "}
                         {booking.fare?.airlineFees?.toFixed(2)}
                       </span>
                     </div>
@@ -1298,7 +1298,7 @@ const BookingSuccess = () => {
                 <div className="flex items-center justify-between text-lg font-bold">
                   <span>Total Amount</span>
                   <span className="text-green-600">
-                    {booking.currency || "₹"}{" "}
+                    {booking.currency || "$"}{" "}
                     {booking.totalAmount?.toFixed(2) || "0.00"}
                   </span>
                 </div>

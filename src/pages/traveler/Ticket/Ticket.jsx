@@ -292,21 +292,21 @@ const Ticket = () => {
             <div className="space-y-2 text-[12px]">
               <div className="flex justify-between">
                 <span className="text-gray-400">Base Fare</span>
-                <span className="font-semibold text-gray-800">₹{baseFare.toLocaleString()}</span>
+                <span className="font-semibold text-gray-800">${baseFare.toLocaleString()}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-400">Taxes</span>
-                <span className="font-semibold text-gray-800">₹{taxes.toLocaleString()}</span>
+                <span className="font-semibold text-gray-800">${taxes.toLocaleString()}</span>
               </div>
               {fees > 0 && (
                 <div className="flex justify-between">
                   <span className="text-gray-400">Fees</span>
-                  <span className="font-semibold text-gray-800">₹{fees.toLocaleString()}</span>
+                  <span className="font-semibold text-gray-800">${fees.toLocaleString()}</span>
                 </div>
               )}
               <div className="flex justify-between border-t border-gray-200 pt-2 mt-1">
                 <span className="font-bold text-gray-900">Total</span>
-                <span className="font-bold text-gray-900">₹{total.toLocaleString()}</span>
+                <span className="font-bold text-gray-900">${total.toLocaleString()}</span>
               </div>
             </div>
           </div>

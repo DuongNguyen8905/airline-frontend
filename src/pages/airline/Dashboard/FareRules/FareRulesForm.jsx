@@ -210,9 +210,9 @@ const FareRulesForm = () => {
 
   const formatCurrency = (value) => {
     if (!value) return "";
-    return new Intl.NumberFormat("en-IN", {
+    return new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "INR",
+      currency: "USD",
       minimumFractionDigits: 0,
     }).format(value);
   };
@@ -530,7 +530,7 @@ const FareRulesForm = () => {
                           className="flex items-center gap-2"
                         >
                           <RefreshCw className="h-4 w-4 text-blue-600" />
-                          Change Fee (₹)
+                          Change Fee ($)
                         </Label>
                         <Field
                           as={Input}
@@ -560,7 +560,7 @@ const FareRulesForm = () => {
                           className="flex items-center gap-2"
                         >
                           <CreditCard className="h-4 w-4 text-red-600" />
-                          Cancellation Fee (₹)
+                          Cancellation Fee ($)
                         </Label>
                         <Field
                           as={Input}
@@ -590,7 +590,7 @@ const FareRulesForm = () => {
                           className="flex items-center gap-2"
                         >
                           <AlertTriangle className="h-4 w-4 text-orange-600" />
-                          No-Show Fee (₹)
+                          No-Show Fee ($)
                         </Label>
                         <Field
                           as={Input}

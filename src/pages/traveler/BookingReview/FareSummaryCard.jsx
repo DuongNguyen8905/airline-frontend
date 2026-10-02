@@ -58,7 +58,7 @@ const FareSummaryCard = ({
         )}
       </div>
       <span className={`text-sm ${highlight ? 'text-gray-900' : 'text-gray-700'}`}>
-        ₹{amount?.toLocaleString() || '0'}
+        ${amount?.toLocaleString() || '0'}
       </span>
     </div>
   );
@@ -88,10 +88,10 @@ const FareSummaryCard = ({
             <span className="text-sm text-gray-600">Total Amount</span>
             <div className="text-right">
               <p className="text-2xl font-bold text-gray-900">
-                ₹{grandTotal.toLocaleString()}
+                ${grandTotal.toLocaleString()}
               </p>
               {savings > 0 && (
-                <p className="text-xs text-green-600 font-medium">You save ₹{savings.toLocaleString()}</p>
+                <p className="text-xs text-green-600 font-medium">You save ${savings.toLocaleString()}</p>
               )}
             </div>
           </div>

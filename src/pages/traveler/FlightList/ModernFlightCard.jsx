@@ -384,11 +384,11 @@ const ModernFlightCard = ({
             <div className="space-y-1">
               <div className="flex items-baseline gap-2">
                 <span className="text-3xl font-bold text-primary">
-                  ₹{fare?.currentPrice?.toLocaleString() || fare?.totalPrice?.toLocaleString()}
+                  ${fare?.currentPrice?.toLocaleString() || fare?.totalPrice?.toLocaleString()}
                 </span>
                 {fare?.baseFare !== fare?.currentPrice && (
                   <span className="text-lg text-muted-foreground line-through">
-                    ₹{fare?.baseFare?.toLocaleString()}
+                    ${fare?.baseFare?.toLocaleString()}
                   </span>
                 )}
               </div>
@@ -525,14 +525,14 @@ const ModernFlightCard = ({
                     <div className="flex justify-between items-center text-sm">
                       <span className="text-muted-foreground">Base Fare</span>
                       <span className="font-semibold text-foreground">
-                        ₹{fare?.baseFare?.toLocaleString()}
+                        ${fare?.baseFare?.toLocaleString()}
                       </span>
                     </div>
                     <Separator />
                     <div className="flex justify-between items-center text-sm">
                       <span className="text-muted-foreground">Taxes & Fees</span>
                       <span className="font-semibold text-foreground">
-                        ₹{fare?.taxesAndFees?.toLocaleString()}
+                        ${fare?.taxesAndFees?.toLocaleString()}
                       </span>
                     </div>
                     {fare?.airlineFees > 0 && (
@@ -541,7 +541,7 @@ const ModernFlightCard = ({
                         <div className="flex justify-between items-center text-sm">
                           <span className="text-muted-foreground">Airline Fees</span>
                           <span className="font-semibold text-foreground">
-                            ₹{fare?.airlineFees?.toLocaleString()}
+                            ${fare?.airlineFees?.toLocaleString()}
                           </span>
                         </div>
                       </>
@@ -550,7 +550,7 @@ const ModernFlightCard = ({
                     <div className="flex justify-between items-center pt-2">
                       <span className="font-bold text-foreground text-lg">Total Price</span>
                       <span className="font-bold text-primary text-2xl">
-                        ₹{fare?.totalPrice?.toLocaleString()}
+                        ${fare?.totalPrice?.toLocaleString()}
                       </span>
                     </div>
                   </div>
@@ -644,7 +644,7 @@ const ModernFlightCard = ({
                                 Additional Baggage
                               </p>
                               <p className="text-amber-700 dark:text-amber-300">
-                                Extra baggage can be added for ₹
+                                Extra baggage can be added for $
                                 {fare.baggagePolicy.additionalBaggageFee} per piece (subject to
                                 availability).
                               </p>
@@ -714,7 +714,7 @@ const ModernFlightCard = ({
                                   Cancellation Fee
                                 </span>
                                 <span className="text-sm font-semibold text-foreground">
-                                  ₹{fare.fareRules.cancellationFee}
+                                  ${fare.fareRules.cancellationFee}
                                 </span>
                               </div>
                             </>
@@ -772,7 +772,7 @@ const ModernFlightCard = ({
                               <div className="flex items-center justify-between">
                                 <span className="text-sm text-muted-foreground">Change Fee</span>
                                 <span className="text-sm font-semibold text-foreground">
-                                  ₹{fare.fareRules.changeFee}
+                                  ${fare.fareRules.changeFee}
                                 </span>
                               </div>
                             </>

@@ -262,7 +262,7 @@ const BaggageSelection = ({ selectedBaggage, onSelectBaggage }) => {
                       <div className="text-right">
                         <p className="text-xs text-gray-500 mb-0.5">Price per bag</p>
                         <p className="text-2xl font-bold text-blue-600">
-                          ₹{baggage.price.toLocaleString()}
+                          ${baggage.price.toLocaleString()}
                         </p>
                       </div>
 
@@ -298,7 +298,7 @@ const BaggageSelection = ({ selectedBaggage, onSelectBaggage }) => {
                           </div>
                           {quantity > 0 && (
                             <p className="text-sm font-semibold text-blue-600">
-                              Total: ₹{(baggage.price * quantity).toLocaleString()}
+                              Total: ${(baggage.price * quantity).toLocaleString()}
                             </p>
                           )}
                         </div>
@@ -327,7 +327,7 @@ const BaggageSelection = ({ selectedBaggage, onSelectBaggage }) => {
               Selected Extra Baggage ({selectedBaggage.reduce((sum, b) => sum + b.quantity, 0)} bags)
             </p>
             <p className="text-lg font-bold text-green-600">
-              ₹{totalBaggageCost.toLocaleString()}
+              ${totalBaggageCost.toLocaleString()}
             </p>
           </div>
           <div className="space-y-2">
@@ -351,7 +351,7 @@ const BaggageSelection = ({ selectedBaggage, onSelectBaggage }) => {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="font-bold text-gray-900">
-                    ₹{(item.price * item.quantity).toLocaleString()}
+                    ${(item.price * item.quantity).toLocaleString()}
                   </span>
                   <button
                     onClick={() => onSelectBaggage(selectedBaggage.filter(b => b.id !== item.id))}

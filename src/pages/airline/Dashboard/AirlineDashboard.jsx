@@ -319,7 +319,7 @@ console.log("flightList ",flights)
                   <div className="text-sm text-orange-800">Avg Occupancy</div>
                 </div>
                 <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-4 rounded-xl border border-indigo-200">
-                  <div className="text-2xl font-bold text-indigo-600">₹{(dashboardStats.revenue / 100000).toFixed(1)}L</div>
+                  <div className="text-2xl font-bold text-indigo-600">${dashboardStats.revenue.toLocaleString()}</div>
                   <div className="text-sm text-indigo-800">Revenue</div>
                 </div>
               </div>

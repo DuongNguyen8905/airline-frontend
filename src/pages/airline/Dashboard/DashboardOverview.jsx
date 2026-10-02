@@ -25,18 +25,20 @@ const DashboardOverview = ({
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span className="text-sm">Flight AI-203 departed on time</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span className="text-sm">New booking: PNR ABCD123</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                <span className="text-sm">Flight 6E-425 delayed by 30 minutes</span>
-              </div>
+              {flights && flights.length > 0 ? (
+                flights.slice(0, 3).map((f) => (
+                  <div key={f.id} className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-sm">
+                      Flight {f.flightNumber} scheduled ({f.departureAirport?.iataCode || 'HAN'} → {f.arrivalAirport?.iataCode || 'SGN'})
+                    </span>
+                  </div>
+                ))
+              ) : (
+                <div className="text-sm text-muted-foreground">
+                  No recent flight activity recorded
+                </div>
+              )}
             </div>
           </CardContent>
         </Card>
@@ -77,15 +79,19 @@ const DashboardOverview = ({
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {flights.slice(0, 3).map((flight) => (
-              <FlightCard
-                key={flight.id}
-                flight={flight}
-                getStatusBadge={getStatusBadge}
-                onEdit={handleEditFlight}
-                onDelete={handleDeleteFlight}
-              />
-            ))}
+            {(flights || []).length === 0 ? (
+              <p className="text-sm text-muted-foreground text-center py-4">No flights created yet</p>
+            ) : (
+              (flights || []).slice(0, 3).map((flight) => (
+                <FlightCard
+                  key={flight.id}
+                  flight={flight}
+                  getStatusBadge={getStatusBadge}
+                  onEdit={handleEditFlight}
+                  onDelete={handleDeleteFlight}
+                />
+              ))
+            )}
           </div>
         </CardContent>
       </Card>

@@ -239,7 +239,7 @@ const BookingManagement = () => {
               <div>
                 <p className="text-sm text-gray-600">Revenue</p>
                 <p className="text-2xl font-bold text-purple-600">
-                  ₹{(bookingStats.totalRevenue / 100000).toFixed(1)}L
+                  ${(bookingStats.totalRevenue || 0).toLocaleString()}
                 </p>
               </div>
               <CreditCard className="h-8 w-8 text-purple-600" />

@@ -85,7 +85,7 @@ const FlightCard = ({ flight, onEdit, onDelete, onView }) => {
           <div className="text-sm">
             {flight.lowestPrice ? (
               <>
-                <div className="font-medium text-foreground">₹{flight.lowestPrice.toLocaleString()}</div>
+                <div className="font-medium text-foreground">${flight.lowestPrice.toLocaleString()}</div>
                 <div className="text-muted-foreground text-xs">Starting fare</div>
               </>
             ) : (

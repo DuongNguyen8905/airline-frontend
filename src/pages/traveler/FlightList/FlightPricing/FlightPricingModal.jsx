@@ -180,7 +180,7 @@ const FlightPricingModal = ({ isOpen, onClose, flight, onSelectFare }) => {
             <div className="flex items-center gap-4">
               <div className="text-center">
                 <div className="text-2xl font-bold text-blue-600">
-                  {flight?.departureAirportCode || "DEL"}
+                  {flight?.departureAirportCode || "HAN"}
                 </div>
                 <div className="text-xs text-muted-foreground">
                   {new Date(flight?.departureTime).toLocaleTimeString("en-US", {
@@ -199,7 +199,7 @@ const FlightPricingModal = ({ isOpen, onClose, flight, onSelectFare }) => {
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-purple-600">
-                  {flight?.arrivalAirportCode || "BOM"}
+                  {flight?.arrivalAirportCode || "SGN"}
                 </div>
                 <div className="text-xs text-muted-foreground">
                   {new Date(flight?.arrivalTime).toLocaleTimeString("en-US", {

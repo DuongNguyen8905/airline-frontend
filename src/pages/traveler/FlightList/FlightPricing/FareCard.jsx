@@ -157,7 +157,7 @@ const FareCard = ({ fare, isSelected, onSelect, passengerCount = 1 }) => {
     if (fare.fareRules?.changeFee !== undefined) {
       categories.flexibility.items.push({
         icon: DollarSign,
-        text: `Date Change: ₹${fare.fareRules.changeFee}`,
+        text: `Date Change: $${fare.fareRules.changeFee}`,
         subtext: fare.fareRules.changeDeadlineHours
           ? `${fare.fareRules.changeDeadlineHours}h before departure`
           : "Per change request",
@@ -488,7 +488,7 @@ const FareCard = ({ fare, isSelected, onSelect, passengerCount = 1 }) => {
           <div className="text-right flex-shrink-0">
             <div className="flex items-start justify-end gap-0.5 mb-0.5">
               <span className="text-sm font-semibold text-gray-600 mt-1">
-                ₹
+                $
               </span>
               <span
                 className={cn(
@@ -499,7 +499,7 @@ const FareCard = ({ fare, isSelected, onSelect, passengerCount = 1 }) => {
                 )}
               >
                 {calculateTotalPrice(fare.currentPrice || 0).toLocaleString(
-                  "en-IN"
+                  "en-US"
                 )}
               </span>
             </div>
@@ -511,7 +511,7 @@ const FareCard = ({ fare, isSelected, onSelect, passengerCount = 1 }) => {
             <div className="inline-flex items-center gap-1 px-2 py-0.5 bg-gray-100 rounded-full">
               <DollarSign className="w-2.5 h-2.5 text-gray-600" />
               <span className="text-[10px] font-semibold text-gray-700">
-                ₹{fare.currentPrice?.toLocaleString("en-IN")}/person
+                ${fare.currentPrice?.toLocaleString("en-US")}/person
               </span>
             </div>
           </div>
@@ -545,10 +545,10 @@ const FareCard = ({ fare, isSelected, onSelect, passengerCount = 1 }) => {
                       Base Fare
                     </span>
                     <span className="text-base font-bold text-gray-900">
-                      ₹
+                      $
                       {(
                         (fare.baseFare || 0) * (passengerCount || 1)
-                      ).toLocaleString("en-IN")}
+                      ).toLocaleString("en-US")}
                     </span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
@@ -556,10 +556,10 @@ const FareCard = ({ fare, isSelected, onSelect, passengerCount = 1 }) => {
                       Airline Fees
                     </span>
                     <span className="text-base font-bold text-gray-900">
-                      ₹
+                      $
                       {(
                         (fare.airlineFees || 0) * (passengerCount || 1)
-                      ).toLocaleString("en-IN")}
+                      ).toLocaleString("en-US")}
                     </span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-white rounded-lg shadow-sm">
@@ -567,10 +567,10 @@ const FareCard = ({ fare, isSelected, onSelect, passengerCount = 1 }) => {
                       Taxes & Fees
                     </span>
                     <span className="text-base font-bold text-gray-900">
-                      ₹
+                      $
                       {(
                         (fare.taxesAndFees || 0) * (passengerCount || 1)
-                      ).toLocaleString("en-IN")}
+                      ).toLocaleString("en-US")}
                     </span>
                   </div>
                   <Separator className="my-1" />
@@ -579,10 +579,10 @@ const FareCard = ({ fare, isSelected, onSelect, passengerCount = 1 }) => {
                       Total Amount
                     </span>
                     <span className="text-xl font-black text-white">
-                      ₹
+                      $
                       {(
                         (fare.totalPrice || 0) * (passengerCount || 1)
-                      ).toLocaleString("en-IN")}
+                      ).toLocaleString("en-US")}
                     </span>
                   </div>
                 </div>

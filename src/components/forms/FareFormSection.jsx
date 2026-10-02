@@ -45,9 +45,9 @@ const FareFormSection = ({
 
   const formatCurrency = (value) => {
     if (!value) return '';
-    return new Intl.NumberFormat('en-IN', {
+    return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'INR',
+      currency: 'USD',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);
@@ -123,7 +123,7 @@ const FareFormSection = ({
                     className="pl-8"
                   />
                   <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">
-                    ₹
+                    $
                   </span>
                 </div>
               )}
@@ -155,7 +155,7 @@ const FareFormSection = ({
                     className="pl-8"
                   />
                   <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">
-                    ₹
+                    $
                   </span>
                 </div>
               )}
@@ -189,7 +189,7 @@ const FareFormSection = ({
                     className="pl-8"
                   />
                   <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">
-                    ₹
+                    $
                   </span>
                 </div>
               )}

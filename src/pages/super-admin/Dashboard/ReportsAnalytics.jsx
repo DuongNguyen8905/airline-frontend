@@ -17,16 +17,16 @@ const ReportsAnalytics = ({ activeSection }) => {
             <h3 className="font-medium mb-3">Top Performing Airlines</h3>
             <div className="space-y-2">
               <div className="flex justify-between">
-                <span>IndiGo</span>
-                <span className="font-medium">₹78M</span>
+                <span>Bamboo Airways</span>
+                <span className="font-medium">$0</span>
               </div>
               <div className="flex justify-between">
-                <span>Air India</span>
-                <span className="font-medium">₹45M</span>
+                <span>Vietnam Airlines</span>
+                <span className="font-medium">$0</span>
               </div>
               <div className="flex justify-between">
-                <span>Vistara</span>
-                <span className="font-medium">₹32M</span>
+                <span>Vietjet Air</span>
+                <span className="font-medium">$0</span>
               </div>
             </div>
           </div>
@@ -35,16 +35,16 @@ const ReportsAnalytics = ({ activeSection }) => {
             <h3 className="font-medium mb-3">Busiest Routes</h3>
             <div className="space-y-2">
               <div className="flex justify-between">
-                <span>DEL → BOM</span>
-                <span className="font-medium">1,247 flights</span>
+                <span>HAN → SGN</span>
+                <span className="font-medium">1 flight</span>
               </div>
               <div className="flex justify-between">
-                <span>BLR → DEL</span>
-                <span className="font-medium">892 flights</span>
+                <span>HAN → DAD</span>
+                <span className="font-medium">0 flights</span>
               </div>
               <div className="flex justify-between">
-                <span>BOM → BLR</span>
-                <span className="font-medium">674 flights</span>
+                <span>SGN → DAD</span>
+                <span className="font-medium">0 flights</span>
               </div>
             </div>
           </div>

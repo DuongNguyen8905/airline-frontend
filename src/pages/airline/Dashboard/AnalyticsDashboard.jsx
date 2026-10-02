@@ -100,7 +100,7 @@ const AnalyticsDashboard = ({ flights }) => {
   const kpiCards = [
     {
       title: "Total Revenue",
-      value: `₹${(analytics.totalRevenue / 100000).toFixed(1)}L`,
+      value: `$${analytics.totalRevenue.toLocaleString()}`,
       change: "+12.5%",
       trend: "up",
       icon: DollarSign,
@@ -132,7 +132,7 @@ const AnalyticsDashboard = ({ flights }) => {
     },
     {
       title: "Revenue per Flight",
-      value: `₹${(analytics.revenuePerFlight / 1000).toFixed(0)}K`,
+      value: `$${analytics.revenuePerFlight.toLocaleString()}`,
       change: "+15.7%",
       trend: "up",
       icon: TrendingUp,
@@ -309,7 +309,7 @@ const AnalyticsDashboard = ({ flights }) => {
                     </div>
                     <div className="flex justify-between text-xs text-gray-500 mt-1">
                       <span>{aircraft.bookings} bookings</span>
-                      <span>₹{(aircraft.revenue / 100000).toFixed(1)}L revenue</span>
+                      <span>${aircraft.revenue.toLocaleString()} revenue</span>
                     </div>
                   </div>
                 )
@@ -343,7 +343,7 @@ const AnalyticsDashboard = ({ flights }) => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="font-semibold text-gray-900">₹{(route.revenue / 100000).toFixed(1)}L</div>
+                    <div className="font-semibold text-gray-900">${route.revenue.toLocaleString()}</div>
                     <div className="text-sm text-gray-600">{route.bookings} bookings</div>
                   </div>
                 </div>
@@ -376,7 +376,7 @@ const AnalyticsDashboard = ({ flights }) => {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="font-semibold text-gray-900">₹{efficiency}K</div>
+                      <div className="font-semibold text-gray-900">${efficiency}K</div>
                       <div className="text-sm text-gray-600">per flight</div>
                     </div>
                   </div>

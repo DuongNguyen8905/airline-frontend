@@ -14,19 +14,19 @@ const FinancialManagement = ({ activeSection }) => {
       <CardContent>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="bg-green-50 p-4 rounded-lg text-center">
-            <p className="text-2xl font-bold text-green-600">₹12.4M</p>
+            <p className="text-2xl font-bold text-green-600">$0</p>
             <p className="text-sm text-green-800">Total Revenue</p>
           </div>
           <div className="bg-blue-50 p-4 rounded-lg text-center">
-            <p className="text-2xl font-bold text-blue-600">₹890K</p>
+            <p className="text-2xl font-bold text-blue-600">$0</p>
             <p className="text-sm text-blue-800">Commission</p>
           </div>
           <div className="bg-purple-50 p-4 rounded-lg text-center">
-            <p className="text-2xl font-bold text-purple-600">8,934</p>
+            <p className="text-2xl font-bold text-purple-600">0</p>
             <p className="text-sm text-purple-800">Transactions</p>
           </div>
           <div className="bg-red-50 p-4 rounded-lg text-center">
-            <p className="text-2xl font-bold text-red-600">12</p>
+            <p className="text-2xl font-bold text-red-600">0</p>
             <p className="text-sm text-red-800">Chargebacks</p>
           </div>
         </div>
@@ -39,7 +39,7 @@ const FinancialManagement = ({ activeSection }) => {
               <span className="text-green-600 font-medium">Active</span>
             </div>
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded">
-              <span>Razorpay</span>
+              <span>VNPay</span>
               <span className="text-green-600 font-medium">Active</span>
             </div>
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded">

@@ -157,7 +157,7 @@ const FlightScheduleTable = () => {
             <span>Flight Schedules ({flightSchedules.length})</span>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Calendar className="h-4 w-4" />
-              {new Date().toLocaleDateString("en-IN")}
+              {new Date().toLocaleDateString("en-US")}
             </div>
           </CardTitle>
         </CardHeader>

@@ -37,7 +37,7 @@ const SystemConfiguration = ({ activeSection }) => {
             <div className="space-y-3">
               <div className="flex items-center justify-between p-3 bg-gray-50 rounded">
                 <span>Default Currency</span>
-                <Button variant="outline" size="sm">INR - Edit</Button>
+                <Button variant="outline" size="sm">USD - Edit</Button>
               </div>
               <div className="flex items-center justify-between p-3 bg-gray-50 rounded">
                 <span>Default Language</span>
@@ -45,7 +45,7 @@ const SystemConfiguration = ({ activeSection }) => {
               </div>
               <div className="flex items-center justify-between p-3 bg-gray-50 rounded">
                 <span>Default Timezone</span>
-                <Button variant="outline" size="sm">Asia/Kolkata - Edit</Button>
+                <Button variant="outline" size="sm">Asia/Ho_Chi_Minh - Edit</Button>
               </div>
             </div>
           </div>
