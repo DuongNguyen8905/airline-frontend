@@ -11,4 +11,20 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://duongdev-air-server.japaneast.cloudapp.azure.com:5000",
+        changeOrigin: true,
+      },
+      "/auth": {
+        target: "http://duongdev-air-server.japaneast.cloudapp.azure.com:5000",
+        changeOrigin: true,
+      },
+      "/users": {
+        target: "http://duongdev-air-server.japaneast.cloudapp.azure.com:5000",
+        changeOrigin: true,
+      },
+    },
+  },
 })
