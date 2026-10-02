@@ -96,14 +96,25 @@ const AircraftTable = ({ onViewDetails, onEdit, onDelete }) => {
   }
 
   if (error) {
+    const isNoAirline = typeof error === 'string' && error.toLowerCase().includes("don't have airline");
     return (
       <Card>
         <CardContent className="pt-6">
-          <div className="text-red-600 text-center">
-            <p>Error loading aircraft data: {error}</p>
-            <Button onClick={() => window.location.reload()} className="mt-2">
-              Retry
-            </Button>
+          <div className="text-center py-6">
+            <p className={isNoAirline ? "text-amber-600 font-medium mb-3" : "text-red-600 mb-3"}>
+              {isNoAirline
+                ? "Tài khoản của bạn chưa có Hãng hàng không. Vui lòng đăng ký thông tin Hãng bay để bắt đầu quản lý đội bay."
+                : `Error loading aircraft data: ${error}`}
+            </p>
+            {isNoAirline ? (
+              <Button onClick={() => window.location.href = '/airline-onboarding'} className="bg-blue-600 hover:bg-blue-700">
+                Đăng ký Hãng bay ngay
+              </Button>
+            ) : (
+              <Button onClick={() => window.location.reload()} className="mt-2">
+                Retry
+              </Button>
+            )}
           </div>
         </CardContent>
       </Card>

@@ -13,4 +13,16 @@ const api = axios.create({
   },
 });
 
+// Automatically inject JWT token from localStorage into all outgoing requests
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('jwt');
+    if (token && !config.headers.Authorization) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
 export default api;
