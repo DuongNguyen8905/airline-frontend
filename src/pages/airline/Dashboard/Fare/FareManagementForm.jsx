@@ -141,22 +141,38 @@ const FareManagementForm = ({ fare }) => {
   // Handle form submission
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
+      if (!selectedFlight) {
+        toast.error("Flight is required", {
+          description: "Please select a flight before saving the fare.",
+        });
+        setSubmitting(false);
+        return;
+      }
+
+      if (!selectedCabin) {
+        toast.error("Cabin Class is required", {
+          description: "Please select a cabin class. If none are available, create a cabin class for this aircraft first.",
+        });
+        setSubmitting(false);
+        return;
+      }
+
       const formattedValues = {
         // Basic Information
         name: values.name,
-        rbdCode: values.rbdCode,
+        rbdCode: values.rbdCode ? values.rbdCode.trim().charAt(0).toUpperCase() : "Y",
         fareLabel: values.fareLabel || null,
-        flightId: selectedFlight ? parseInt(selectedFlight) : null,
-        cabinClassId: selectedCabin ? parseInt(selectedCabin) : null,
+        flightId: parseInt(selectedFlight),
+        cabinClassId: parseInt(selectedCabin),
 
         // Pricing
-        baseFare: parseFloat(values.baseFare),
-        taxesAndFees: parseFloat(values.taxesAndFees),
-        airlineFees: parseFloat(values.airlineFees),
+        baseFare: parseFloat(values.baseFare) || 0,
+        taxesAndFees: parseFloat(values.taxesAndFees) || 0,
+        airlineFees: parseFloat(values.airlineFees) || 0,
         currentPrice:
-          parseFloat(values.baseFare) +
-          parseFloat(values.taxesAndFees) +
-          parseFloat(values.airlineFees),
+          (parseFloat(values.baseFare) || 0) +
+          (parseFloat(values.taxesAndFees) || 0) +
+          (parseFloat(values.airlineFees) || 0),
 
         extraSeatSpace: values.extraSeatSpace,
         preferredSeatChoice: values.preferredSeatChoice,
@@ -185,8 +201,6 @@ const FareManagementForm = ({ fare }) => {
         airportTransfer: values.airportTransfer,
       };
 
-  
-
       // Dispatch action to save fare
       if (fare?.id) {
         await dispatch(
@@ -212,10 +226,13 @@ const FareManagementForm = ({ fare }) => {
       // navigate(-1);
     } catch (error) {
       console.error("Error saving fare:", error);
+      const errorMsg =
+        (typeof error === "string" ? error : null) ||
+        error?.response?.data?.message ||
+        error?.message ||
+        "An error occurred while saving the fare. Please try again.";
       toast.error("Failed to save fare", {
-        description:
-          error?.message ||
-          "An error occurred while saving the fare. Please try again.",
+        description: errorMsg,
       });
     } finally {
       setSubmitting(false);
